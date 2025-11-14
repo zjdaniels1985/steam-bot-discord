@@ -67,6 +67,11 @@ cp .env.example .env
 npm start
 ```
 
+4. (Optional) Run health check to verify setup:
+```bash
+npm run healthcheck
+```
+
 ## Configuration
 
 ### Environment Variables
