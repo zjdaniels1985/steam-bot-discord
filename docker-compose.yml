@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  steam-bot:
+    build: .
+    container_name: steam-discord-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      # Persist database across container restarts
+      - ./database:/app/database
+    environment:
+      - NODE_ENV=production
+      - DATABASE_PATH=/app/database/bot.db
+    # Optionally override LOG_LEVEL
+    # environment:
+    #   - LOG_LEVEL=debug
